@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>AQI Prediction</title>
+    <link rel="stylesheet" href="/static/css/style.css" />
+    <link rel="icon" href="/static/images/icon.jpg" type="image/jpg" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+
+  </head>
+  <body style="background-image: url('/static/images/factory-bckground.png')">
+    <header>
+      <div class="nav-container">
+        <img src="/static/images/icon.jpg" alt="Icon" class="icon" />
+        <h1>Air Quality Index Prediction</h1>
+        <div class="hamburger" onclick="toggleMenu()">☰</div>
+        <nav id="navMenu" class="nav-menu">
+          <ul>
+            <li><a href="/">Home</a></li>
+            <li><a href="/details">Notebook</a></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+
+    <div class="container">
+      <form id="predict-form">
+        <h2 style="text-align: center;">Predict with the model</h2>
+        <label for="city">City:</label>
+    <select id="city" name="city" required style="width:95%;">
+      <option value="">Select a city</option>
+      <option value="Bangalore">Bangalore</option>
+      <option value="Mysore">Mysore</option>
+      <option value="Mangalore">Mangalore</option>
+      <option value="Hubli">Hubli</option>
+      <option value="Belgaum">Belgaum</option>
+      <option value="Davanagere">Davanagere</option>
+      <option value="Shimoga">Shimoga</option>
+      <option value="Tumkur">Tumkur</option>
+      <option value="Gulbarga">Gulbarga</option>
+      <option value="Bellary">Bellary</option>
+      <option value="Bijapur">Bijapur</option>
+      <option value="Udupi">Udupi</option>
+      <option value="Chikmagalur">Chikmagalur</option>
+    </select><br />
+
+        <label for="pm25">PM2.5:</label>
+        <input type="number" id="pm25" name="pm25" required  /><br />
+
+        <label for="no2">NO2:</label>
+        <input type="number" id="no2" name="no2" required  /><br />
+
+        <label for="so2">SO2:</label>
+        <input type="number" id="so2" name="so2" required  /><br />
+
+        <label for="co">CO:</label>
+        <input type="number" id="co" name="co" required  /><br />
+
+        <label for="o3">O3:</label>
+        <input type="number" id="o3" name="o3" required  /><br />
+
+        <label for="nh3">NH3:</label>
+        <input type="number" id="nh3" name="nh3" required  /><br />
+
+        <button type="submit">Predict AQI Bucket</button>
+      </form>
+    </div>
+<!-- Popup modal -->
+<div id="resultPopup" class="popup" style="display:none;">
+  <div class="popup-content">
+      <h2>City Name: <span id="cityname"></span></h2>
+      <h2>Prediction Result: <span id="prediction"></span></h2>
+      <button id="closePopup">Close</button>
+  </div>
+</div>
+
+<footer>
+  <div class="footer-container">
+      <div class="footer-left">
+          Harshith J | 9606662345 | harshith11.edu@gmail.com
+      </div>
+      <div class="footer-right">
+          <a href="https://github.com/harsh11ith" target="_blank">
+              <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/harshith11/" target="_blank">
+              <i class="fab fa-linkedin"></i>
+          </a>
+      </div>
+  </div>
+</footer>
+
+
+    <script src="/static/js/script.js"></script>
+    <script>
+      function toggleMenu() {
+        const navMenu = document.getElementById('navMenu');
+        navMenu.classList.toggle('active');
+      }
+    </script>
+  </body>
+</html>
